@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Gato {
+public class GatoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +17,7 @@ public class Gato {
     private String nome; // Um nome que vai poder dar pro gatito
 
     // Construtor vazio (obrigatório para o Spring funcionar)
-    public Gato() {
+    public GatoEntity() {
     }
 
     // Getters e Setters, pra Permitir que o Java acesse e modifique os dados
