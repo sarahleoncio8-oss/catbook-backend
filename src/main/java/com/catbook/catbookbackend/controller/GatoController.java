@@ -19,7 +19,7 @@ public class GatoController {
     // 1. POST (Criar/Salvar um novo gatinho no banco)
     @PostMapping
     public ResponseEntity<GatoEntity> salvarGato(@RequestBody GatoEntity gato) {
-        // Validação básica (exigência do professor)
+        // Validação
         if (gato.getUrlImagem() == null || gato.getUrlImagem().isEmpty()) {
             return ResponseEntity.badRequest().build(); // Retorna erro se tentar salvar sem imagem
         }
@@ -34,7 +34,7 @@ public class GatoController {
         return ResponseEntity.ok(gatos);
     }
 
-    // 3. PUT (Atualizar o nome de um gatinho, por exemplo)
+    // 3. PUT (Atualizar o nome de um gatinho)
     @PutMapping("/{id}")
     public ResponseEntity<GatoEntity> atualizarGato(@PathVariable Long id, @RequestBody GatoEntity gatoAtualizado) {
         if (!repository.existsById(id)) {
