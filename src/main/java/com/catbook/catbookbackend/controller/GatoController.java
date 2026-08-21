@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/gatos")
-@CrossOrigin("*") // Isso aqui é MÁGICO! Libera o seu HTML/JS para acessar a API sem dar erro de bloqueio (CORS)
+@CrossOrigin("*") //
 public class GatoController {
 
     @Autowired
@@ -38,7 +38,7 @@ public class GatoController {
     @PutMapping("/{id}")
     public ResponseEntity<GatoEntity> atualizarGato(@PathVariable Long id, @RequestBody GatoEntity gatoAtualizado) {
         if (!repository.existsById(id)) {
-            return ResponseEntity.notFound().build(); // Se o gato não existir, avisa que não achou
+            return ResponseEntity.notFound().build(); // Se o gatito não existir, avisa que não achou
         }
         gatoAtualizado.setId(id); // Garante que vai atualizar o gato certo
         GatoEntity gatoSalvo = repository.save(gatoAtualizado);

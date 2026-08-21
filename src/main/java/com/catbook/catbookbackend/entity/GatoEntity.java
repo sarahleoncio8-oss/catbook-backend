@@ -10,7 +10,7 @@ public class GatoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id; // Este é o ID automático do banco de dados MySQL
+    private Long id; //
 
     private String catId; // ID original que vem da API do gatinho
     private String urlImagem; // O link da foto do gato
@@ -20,7 +20,7 @@ public class GatoEntity {
     public GatoEntity() {
     }
 
-    // Getters e Setters, pra Permitir que o Java acesse e modifique os dados
+    // Getters e Setters, pra Permitir que o Java acesse e modifique os dados, eu acho
 
     public Long getId() {
         return id;
